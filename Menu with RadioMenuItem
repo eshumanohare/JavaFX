@@ -1,0 +1,64 @@
+package application;
+	
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+public class Main extends Application {
+
+	Stage window;
+	Scene scene;
+	BorderPane layout;
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	
+	public void start(Stage primaryStage) throws Exception {
+		window = primaryStage;
+		window.setTitle("Menu");
+		ConfirmBox ob = new ConfirmBox();
+		
+		window.setOnCloseRequest(e -> {
+			ob.display("Choose", "Do you want to quit?"); 
+			if(ob.result == false)
+				e.consume();           // e.consume consumes the root of the stack from where the initial calling started
+		});
+		
+		// File Menu
+		Menu menu = new Menu("File");
+		menu.getItems().addAll(new MenuItem("New Project..."), new MenuItem("Import Project..."), new MenuItem("Recent Project"));
+		
+		// Difficulty Menu
+		Menu difficulty = new Menu("Difficulty");
+		ToggleGroup toggle = new ToggleGroup();
+		
+		RadioMenuItem easy = new RadioMenuItem("Easy");
+		RadioMenuItem medium = new RadioMenuItem("Medium");
+		RadioMenuItem hard = new RadioMenuItem("Hard");
+		
+		easy.setToggleGroup(toggle);
+		medium.setToggleGroup(toggle);
+		hard.setToggleGroup(toggle);
+		
+		difficulty.getItems().addAll(easy,medium,hard);
+		
+		MenuBar menubar = new MenuBar();
+		menubar.getMenus().addAll(menu, difficulty);
+		
+		layout = new BorderPane();
+		layout.setTop(menubar);
+		
+		scene = new Scene(layout,300,400);
+		window.setScene(scene);
+		window.show();
+	
+}
+}
