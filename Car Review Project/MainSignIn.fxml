@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="593.0" prefWidth="861.0" style="-fx-background-color: #ab4752;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <JFXTextField fx:id="username" layoutX="267.0" layoutY="223.0" prefHeight="43.0" prefWidth="318.0" promptText="Username">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" layoutX="267.0" layoutY="310.0" prefHeight="43.0" prefWidth="318.0" promptText="Password">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXCheckBox fx:id="remember" layoutX="264.0" layoutY="414.0" prefHeight="43.0" prefWidth="156.0" text="Remember Me">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXButton fx:id="signIn" contentDisplay="CENTER" layoutX="497.0" layoutY="414.0" onAction="#loginAction" prefHeight="43.0" prefWidth="88.0" style="-fx-background-color: c1b9;" text="Sign In" textFill="#fff9f9">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="signUp" alignment="TOP_CENTER" layoutX="751.0" layoutY="14.0" onAction="#signUpAction" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: #282828;" text="Sign Up" textFill="#fff2f2">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="125.0" fitWidth="137.0" layoutX="364.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/IdeaProjects/src/sample/Images/Resources/Car_100px.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="316.0" layoutY="133.0" prefHeight="69.0" prefWidth="240.0" text="Car Review">
+         <font>
+            <Font name="Berlin Sans FB" size="47.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="233.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true" style="visibility: 100;">
+         <image>
+            <Image url="file:/D:/IdeaProjects/src/sample/Images/Resources/Contacts_52px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="227.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/IdeaProjects/src/sample/Images/Resources/Lock2_64px.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="forgot" layoutX="331.0" layoutY="494.0" prefHeight="43.0" prefWidth="191.0" text="Forgot Your Password?" underline="true" />
+      <ImageView fx:id="progress_gif" fitHeight="150.0" fitWidth="200.0" layoutX="320.0" layoutY="548.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/IdeaProjects/src/sample/Images/Resources/294-1.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
